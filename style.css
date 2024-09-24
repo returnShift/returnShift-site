@@ -1,0 +1,231 @@
+﻿:root {
+    --green: #0ddf72;
+    --green-text: #dafce0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    background-color: black;
+    position: relative;
+    bottom: 0;
+}
+
+blockquote {
+    color: white;
+}
+
+h1 {
+    color: var(--green-text);
+    font-size: 8em;
+    font-family: Calibri, serif;
+    margin: 0;
+}
+
+blockquote {
+    font-style: italic;
+}
+
+p, blockquote {
+    color: white;
+    font-family: Calibri, serif;
+    font-size: x-large;
+}
+
+.content:first-of-type {
+    margin-top: 10pc;
+}
+
+.content {
+    display: flex;
+    flex-grow: 1;
+    margin: 7pc 2pc 0 2pc;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.content > *:first-child {
+    width: 50%;
+}
+
+.returnShift_logo {
+    width: 15pc;
+    position: absolute;
+    top: 16pt;
+    left: 16pt;
+}
+
+.infinityCards_logo_container {
+    margin: 0 5pc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.infinityCards_logo {
+    border-radius: 2pc;
+    rotate: 20deg;
+    box-shadow: 15px 15px 20px var(--green);
+    animation-name: floaty;
+    animation-duration: 4s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes floaty {
+    from {
+        translate: 0 5pc;
+    }
+    50% {
+        translate: 0 0;
+    }
+    to {
+        translate: 0 5pc;
+    }
+}
+
+
+.my_button {
+    width: auto;
+    height: 2em;
+    padding: 0 1em;
+    margin-top: 32pt;
+    font-size: x-large;
+    font-family: Calibri, serif;
+    font-weight: bold;
+    background-color: var(--green);
+    border: 0;
+    border-radius: 1em;
+    transition: all 200ms;
+}
+
+.my_button:hover {
+    translate: 0 -0.35em;
+    box-shadow: 0 0.6em 0.6em -0.4em var(--green);
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+}
+
+.socials > a {
+    width: 5pc;
+    height: 5pc;
+    margin-left: 1pc;
+    margin-right: 1pc;
+    mask-size: cover;
+    background-blend-mode: color;
+    transition: all 200ms ease-out;
+}
+
+.socials > a:nth-child(1) {
+    mask-image: url("images/discord-logo.png");
+    background-image: linear-gradient(#5865F2, #5865F2);
+}
+
+.socials > a:nth-child(2) {
+    mask-image: url("images/instagram-logo.png");
+    background-image: linear-gradient(20deg, #FFD600, #FF7A00, #FF0069, #D300C5, #7638FA);
+}
+
+.socials > a:nth-child(3) {
+    mask-image: url("images/twitch-logo.png");
+    background-image: linear-gradient(#9146FF, #9146FF);
+}
+
+.socials > a:not(:hover) {
+    background-color: white;
+}
+
+@media screen and (max-width: 1150px) {
+    body {
+        justify-content: center;
+        align-items: center;
+    }
+
+    body div {
+        align-self: center;
+    }
+
+    h1 {
+        font-size: 4em;
+        text-align: center;
+    }
+    
+    p {
+        text-align: center;
+    }
+    
+    .content {
+        flex-direction: column;
+        margin-top: 4pc;
+    }
+
+    .content > *:first-child {
+        width: auto;
+    }
+    
+    .infinityCards_logo_container {
+        margin-bottom: 4pc;
+    }
+
+    .infinityCards_logo {
+        width: 15pc;
+        box-shadow: 3px 3px 5px var(--green);
+        border-radius: 0.5pc;
+    }
+
+    @keyframes floaty {
+        from {
+            translate: 0 1pc;
+        }
+        50% {
+            translate: 0 0;
+        }
+        to {
+            translate: 0 1pc;
+        }
+    }
+    
+    *:has(.my_button) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .my_button {
+        align-self: center;
+        margin-top: 0;
+    }
+
+    .socials > a:not(:hover) {
+        background-color: transparent;
+    }
+    .socials > a {
+        animation-duration: 9s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-name: pulse;
+    }
+    
+    .socials > a:nth-child(2) {
+        animation-delay: -6s;
+    }
+    .socials > a:nth-child(3) {
+        animation-delay: -3s;
+    }
+    
+    @keyframes pulse {
+        from {
+            background-color: transparent;
+        }
+        33%, 66% {
+            background-color: white
+        }
+        to {
+            background-color: transparent;
+        }
+    }
+}
