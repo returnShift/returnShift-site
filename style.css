@@ -46,16 +46,15 @@ p, blockquote {
     justify-content: space-around;
 }
 
-.shapes {
+.background-shapes {
     width: 20pc;
     translate: 0 8px;
     align-self: end;
     z-index: -1;
 }
 
-.footer {
+.bottom {
     display: flex;
-    
 }
 
 .returnShift_logo {
