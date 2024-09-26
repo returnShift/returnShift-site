@@ -19,7 +19,7 @@ blockquote {
 
 h1 {
     color: var(--green-text);
-    font-size: 8em;
+    font-size: 6.5em;
     font-family: Calibri, serif;
     margin: 0;
 }
@@ -55,6 +55,8 @@ p, blockquote {
 
 .bottom {
     display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .returnShift_logo {
@@ -93,9 +95,10 @@ p, blockquote {
     }
 }
 
-*:has(> .my_button) {
+.main-message {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     width: 50%;
 }
 
@@ -121,6 +124,11 @@ p, blockquote {
 .my_button:hover {
     translate: 0 -0.35em;
     box-shadow: 0 0.6em 0.6em -0.4em var(--green);
+}
+
+.socials-container {
+    display: flex;
+    flex-direction: column;
 }
 
 .socials {
@@ -207,7 +215,7 @@ p, blockquote {
         }
     }
 
-    * > :has(.my_button) {
+    .main-message {
         display: flex;
         width: auto;
         flex-direction: column;
