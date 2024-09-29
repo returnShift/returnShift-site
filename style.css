@@ -4,120 +4,113 @@
 }
 
 body {
+    height: 100vh;
+    margin: 0;
+    
     display: flex;
-    height: calc(100vh - 16px);
     flex-direction: column;
-    justify-items: center;
+    
     background-color: black;
-    position: relative;
-    bottom: 0;
-}
-
-blockquote {
-    color: white;
 }
 
 h1 {
+    margin: 0;
+    
     color: var(--green-text);
     font-size: 6.5em;
-    font-family: Calibri, serif;
-    margin: 0;
+    font-family: Calibri, sans-serif;
 }
 
-p, blockquote {
-    color: white;
-    font-family: Calibri, serif;
+a, p {
+    font-family: Calibri, sans-serif;
     font-size: 1.5em;
+    text-wrap: wrap;
 }
 
-.concept {
-    font-style: italic;
-}
-
-.content:first-of-type {
-    margin-top: 10pc;
-}
-
-.content {
-    display: flex;
-    flex-grow: 1;
-    margin: 7pc 2pc 0 2pc;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
-.background-shapes {
-    width: 20pc;
-    translate: 0 8px;
-    align-self: end;
-    z-index: -1;
-}
-
-.bottom {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+p {
+    color: white;
 }
 
 .returnShift_logo {
     width: 15pc;
-    position: absolute;
-    top: 16pt;
-    left: 16pt;
+    margin-top: 2pc;
+    margin-left: 2pc;
+}
+
+.content {
+    margin: 0 2pc 7pc 2pc;
+    
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.content p {
+    font-style: italic;
 }
 
 .infinityCards_logo_container {
-    margin: 0 5pc;
+    width: 30pc;
+    margin: 0 3pc;
+    
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .infinityCards_logo {
-    border-radius: 2pc;
-    rotate: 20deg;
-    box-shadow: 15px 15px 20px var(--green);
-    animation-name: floaty;
+    width: 100%;
+    
+    border-radius: 2.5pc;
+    box-shadow: 1pc 1pc 1pc var(--green);
+    rotate: -20deg;
+    
+    animation-name: floaty-card;
     animation-duration: 4s;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
 }
 
-@keyframes floaty {
+@keyframes floaty-card {
     from {
-        translate: 0 5pc;
+        translate: 0 10%;
     }
     50% {
-        translate: 0 0;
+        translate: 0 -10%;
     }
     to {
-        translate: 0 5pc;
+        translate: 0 10%;
     }
 }
 
 .main-message {
+    width: 50%;
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 50%;
 }
 
 .my_button {
-    display: flex;
-    align-items: center;
-    align-self: start;
-    width: auto;
+    width: fit-content;
     height: 2em;
     padding: 0 1em;
-    margin-top: 32pt;
-    font-size: x-large;
-    font-family: Calibri, serif;
-    font-weight: bold;
-    background-color: var(--green);
-    color: black;
-    text-decoration: none;
+    margin: 24px 0;
+    
+    display: flex;
+    align-self: start;
+    align-items: center;
+    
     border: 0;
-    border-radius: 1em;
+    border-radius: 0.5em;
+    
+    color: black;
+    background-color: var(--green);
+    
+    text-decoration: none;
+    font-weight: bold;
+    
     transition: all 200ms;
 }
 
@@ -126,8 +119,20 @@ p, blockquote {
     box-shadow: 0 0.6em 0.6em -0.4em var(--green);
 }
 
+.bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.background-shapes {
+    width: 20pc;
+    align-self: end;
+}
+
 .socials-container {
     display: flex;
+    align-items: center;
     flex-direction: column;
 }
 
@@ -137,13 +142,21 @@ p, blockquote {
 }
 
 .socials > a {
-    width: 5pc;
-    height: 5pc;
+    width: 7pc;
+    min-width: 32px;
+    height: 7pc;
+    min-height: 32px;
     margin-left: 1pc;
     margin-right: 1pc;
+    
     mask-size: cover;
     background-blend-mode: color;
+    
     transition: all 200ms ease-out;
+}
+
+.socials > a:not(:hover) {
+    background-color: white;
 }
 
 .socials > a:nth-child(1) {
@@ -161,88 +174,56 @@ p, blockquote {
     background-image: linear-gradient(#9146FF, #9146FF);
 }
 
-.socials > a:not(:hover) {
-    background-color: white;
-}
-
 @media screen and (max-width: 1150px) {
-    body {
-        justify-content: center;
-        align-items: center;
-    }
-
-    body div {
-        align-self: center;
-    }
-
     h1 {
         font-size: 4em;
         text-align: center;
     }
-    
+
     p {
         text-align: center;
     }
-    
-    .concept {
-        padding: 2pc;
-    }
-    
+
     .content {
-        flex-direction: column;
-        margin-top: 4pc;
-    }
-
-    .infinityCards_logo_container {
-        margin-bottom: 4pc;
-    }
-
-    .infinityCards_logo {
-        width: 15pc;
-        box-shadow: 6px 6px 7px var(--green);
-        border-radius: 0.5pc;
-    }
-
-    @keyframes floaty {
-        from {
-            translate: 0 2pc;
-        }
-        50% {
-            translate: 0 0;
-        }
-        to {
-            translate: 0 2pc;
-        }
-    }
-
-    .main-message {
-        display: flex;
-        width: auto;
         flex-direction: column;
         justify-content: center;
     }
+
+    .infinityCards_logo_container {
+        margin-bottom: 8pc;
+        align-self: center;
+    }
+
+    .main-message {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
     .my_button {
         align-self: center;
-        margin-top: 0;
     }
 
     .socials > a:not(:hover) {
         background-color: transparent;
     }
+
     .socials > a {
         animation-duration: 9s;
         animation-timing-function: ease-in-out;
         animation-iteration-count: infinite;
         animation-name: pulse;
     }
-    
+
     .socials > a:nth-child(2) {
         animation-delay: -6s;
     }
+
     .socials > a:nth-child(3) {
         animation-delay: -3s;
     }
-    
+
     @keyframes pulse {
         from {
             background-color: transparent;
@@ -253,5 +234,9 @@ p, blockquote {
         to {
             background-color: transparent;
         }
+    }
+    
+    .background-shapes {
+        display: none;
     }
 }
