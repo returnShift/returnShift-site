@@ -136,6 +136,10 @@ p {
     flex-direction: column;
 }
 
+.socials-container > p {
+    font-size: 2em;
+}
+
 .socials {
     display: flex;
     justify-content: center;
@@ -165,14 +169,28 @@ p {
 }
 
 .socials > a:nth-child(2) {
-    mask-image: url("images/instagram-logo.png");
-    background-image: linear-gradient(20deg, #FFD600, #FF7A00, #FF0069, #D300C5, #7638FA);
+    mask-image: url("images/youtube-logo.png");
+    background-image: linear-gradient(#FF3D00, #FF3D00);
 }
 
-.socials > a:nth-child(3) {
-    mask-image: url("images/twitch-logo.png");
-    background-image: linear-gradient(#9146FF, #9146FF);
+.socials > a:nth-child(2) {
+    background-color: green;
 }
+
+/*.socials > a:nth-child(2):not(:hover) {*/
+/*    mask-image: url("images/youtube-logo.png");*/
+/*    background-image: linear-gradient(#FFFF00, #FFFF00);*/
+/*}*/
+
+/*.socials > a:nth-child(2) {*/
+/*    mask-image: url("images/instagram-logo.png");*/
+/*    background-image: linear-gradient(20deg, #FFD600, #FF7A00, #FF0069, #D300C5, #7638FA);*/
+/*}*/
+
+/*.socials > a:nth-child(3) {*/
+/*    mask-image: url("images/twitch-logo.png");*/
+/*    background-image: linear-gradient(#9146FF, #9146FF);*/
+/*}*/
 
 @media screen and (max-width: 1150px) {
     h1 {
